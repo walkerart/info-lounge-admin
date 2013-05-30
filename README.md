@@ -1,15 +1,16 @@
-BBB_HTML5
+Screens Admin
 =====================
-This is a start of a middleman project templete
+This is a middleman project
 
-Start by cloning into .middleman/
+Start by cloning
 
-then use make a new project:
+then init:
 ```
-middleman init my_new_boilerplate_project --template=BBB_HTML5
+bower install  
+middleman server
 ```
 
-then cd into the project and do:  
+then to build for deployment do:  
 ```
-bower install
+middleman build
 ```
