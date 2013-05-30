@@ -1,0 +1,11 @@
+<h1 class="section_title">
+    <% if is_home? %>
+        <% if is_search? %>
+            <a href="/collections" class="breadcrumb">Collections</a><%= yield :breadcrumb %>
+        <% else %>
+            <a href="/collections">Collections</a>
+        <% end %>
+    <% else %>
+        <a href="/collections" class="breadcrumb">Collections</a><%= yield :breadcrumb %>
+    <% end %>
+</h1>

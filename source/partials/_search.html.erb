@@ -1,0 +1,10 @@
+<%= form_tag(root_path, name: 'searchform', id: 'searchform', method: 'get') do %>
+    <span class="search_label">Search</span>
+    <span class="search_icon"></span>
+    <input class="q" id="q" name="q" type="text" value="" data-autocomplete-path="<%= autocomplete_path(format: 'json')%>" autocapitalize="off">
+    <input id="search_url" type="hidden">
+    <div class="search_scope">
+        <a href="#" class="search_collections level_1 active" data-autocomplete-path="<%= autocomplete_path(format: 'json')%>" data-action="<%= root_path %>" id="search_collections"><span class="search_dot"></span><span class="search_scope_label">Collections</span></a>
+        <a href="#" class="search_walker level_1" data-autocomplete-path="/search/json" data-action="/search" id="search_walker"><span class="search_dot"></span><span class="search_scope_label">All Walker</span></a>
+    </div>
+<% end %>

@@ -1,0 +1,76 @@
+.wmd-panel { width:100%; }
+.wmd-input {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  display: inline-block;
+  width: 210px;
+  height: 18px;
+  padding: 4px;
+  margin-bottom: 9px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #555555;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  height:300px;
+  width:100%;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  
+  
+}
+.wmd-preview {
+  width:100%;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+}
+.wmd-panel .btn-toolbar {
+  margin-bottom:0;
+  padding:0;
+  width:100%;
+}
+.icon-link, .icon-blockquote, .icon-code, .icon-bullet-list, .icon-list, .icon-header, .icon-hr-line, .icon-undo { background-image:url(../img/Markdown.Editor.Icons.png); }
+.icon-link { background-position:0 0; }
+.icon-blockquote { background-position:-24px 0; }
+.icon-code { background-position:-48px 0; }
+.icon-bullet-list { background-position:-72px 0; }
+.icon-list { background-position:-96px 0; }
+.icon-header { background-position:-120px 0; }
+.icon-hr-line { background-position:-144px 0; }
+.icon-undo { background-position:-168px 0; }
+.wmd-prompt-background { background-color:Black; }
+.wmd-prompt-dialog {
+  border:1px solid #999;
+  background-color:#f5f5f5;
+}
+.wmd-prompt-dialog > div {
+  font-size:0.8em;
+  font-family:arial, helvetica, sans-serif;
+}
+.wmd-prompt-dialog > form > input[type="text"] {
+  border:1px solid #999;
+  color:black;
+}
+.wmd-prompt-dialog > form > input[type="button"] {
+  border:1px solid #888;
+  font-family:trebuchet MS, helvetica, sans-serif;
+  font-size:0.8em;
+  font-weight:bold;
+}
+
+#wmd-button-bar{
+  padding:0px 0px 10px 0px;
+}
+

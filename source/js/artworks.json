@@ -1,0 +1,41 @@
+{
+    "artworks": [
+        { 
+            "title": "Praesent Id Metus Massa",
+            "artist": "John Doe",
+            "year": "2013",
+            "text": "<p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>",
+            "zoomer_url": "http://cdn{s}.walkerart.org/wac_786/{z}_{x}_{y}.jpg",
+            "zoomer_width": 4000,
+            "zoomer_height": 3187
+        },
+        { 
+            "title": "untitled #1",
+            "artist": "John Doe",
+            "year": "2013",
+            "text": "<p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>",
+            "zoomer_url": "http://cdn{s}.walkerart.org/wac_786/{z}_{x}_{y}.jpg",
+            "zoomer_width": 4000,
+            "zoomer_height": 3187
+        },
+        { 
+            "title": "untitled",
+            "artist": "John Doe",
+            "year": "2013",
+            "text": "<p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>",
+            "zoomer_url": "http://cdn{s}.walkerart.org/wac_786/{z}_{x}_{y}.jpg",
+            "zoomer_width": 4000,
+            "zoomer_height": 3187
+        },
+        { 
+            "title": "This is a artwork",
+            "artist": "John Doe",
+            "year": "2013",
+            "text": "<p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>",
+            "zoomer_url": "http://cdn{s}.walkerart.org/wac_786/{z}_{x}_{y}.jpg",
+            "zoomer_width": 4000,
+            "zoomer_height": 3187
+        }
+    ]
+}
+

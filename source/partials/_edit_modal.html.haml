@@ -1,0 +1,26 @@
+#edit_Modal.modal.large.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h1 Edit slide
+  .modal-body
+    %input.artwork_artist{:placeholder => "Artist", :type => "text"}/
+    %input.artwork_title{:placeholder => "Title", :type => "text"}/
+    %input.artwork_year{:placeholder => "Date", :type => "text"}/
+    .wmd-panel
+      #wmd-button-bar-second
+      %textarea#wmd-input-second.wmd-input
+        :preserve
+          This is the *first* editor.
+          ------------------------------
+      
+          Just plain **Markdown**, except that the input is sanitized:
+      
+          <marquee>I'm the ghost from the past!</marquee>
+    #wmd-preview-second.wmd-panel.wmd-preview.hide
+    -#
+      %input.artwork_thumb{:placeholder => "Thumb", :type => "text"}/
+      %input.artwork_video{:placeholder => "Video", :type => "text"}/
+    
+  .modal-footer
+    %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Cancel
+    %button.btn.btn-primary#edit_save Save changes

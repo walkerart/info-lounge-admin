@@ -1,0 +1,92 @@
+/*= require normalize-css/normalize */
+/*= require bootstrap.min/index */
+/*= require jquery.ui/themes/base/jquery.ui.base */
+/*= require jquery.ui/themes/base/jquery.ui.theme */
+/*= require jquery.ui/themes/base/jquery.ui.core */
+/*= require jquery.ui/themes/base/jquery.ui.datepicker */
+/*= require variable_width/index */
+
+@import "susy";
+@import "base_scss/base";
+@import "markdown";
+
+body,html {
+  height:100%;
+}
+
+.main{
+  height:100%;
+}
+
+.slide_item{
+  width: 200px;
+  margin: 15px;
+  background: rgba(220, 220, 220, 0.75);
+  height: 225px;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  img{
+    height: 150px;
+    width: 150px;
+    float: left;
+    margin: 25px;
+    margin-bottom: 8px;
+  }
+  .delete_slide{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .slide_meta{
+    width: 200px;
+    float: left;
+    padding: 0px 10px 0px 10px;
+    span{
+      display:block;
+    }
+  }
+}
+
+.save_json{
+  float:right;
+}
+
+.modal.large{
+    width: 780px;
+    margin-left: -390px; /* - width/2 */
+}
+
+#video_Modal{
+  .modal-body{
+    max-height:700px;
+  }
+}
+
+.hidden{
+  display:none;
+}
+
+.admin_nav{
+  &.navbar{
+    padding:0px 15px 0px 15px;
+  }
+}
+
+.test_main{
+  .list_of_slides{
+    width:100%;
+  }
+}
+
+
+#drop_zone{
+  border: 2px dashed #bbb;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 25px;
+  text-align: center;
+  font-size: 20pt;
+  color: #bbb;
+}

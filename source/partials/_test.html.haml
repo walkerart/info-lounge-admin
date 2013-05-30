@@ -1,0 +1,35 @@
+.well
+  .test_main
+    %a.new_slide.btn
+      %i.icon-plus
+      %div.hidden#mypop
+        .btn-group.add_slides
+          -#
+            %button.btn.add_wac{"data-toggle" => "modal", :href => "#img_Modal", :role => "button"}
+              %i.icon-camera
+          %button.btn.add_image{"data-toggle" => "modal", :href => "#wac_Modal", :role => "button"}
+            %i.icon-picture
+          %button.btn.add_video{"data-toggle" => "modal", :href => "#video_Modal", :role => "button"}
+            %i.icon-facetime-video
+    THIS IS HOW YOU ADD A SLIDE
+    .save_json
+      .btn.import{"data-toggle" => "modal", :href => "#json_Modal", :role => "button"}
+        %i.icon-folder-open
+      .btn.export
+        %i.icon-chevron-up
+      .btn.download
+        %i.icon-file
+      .btn.clear_list
+        %i.icon-fire
+.test_main          
+  %ul.list_of_slides#sortable
+    
+ 
+
+
+/ Modal
+= partial "partials/img_modal"
+= partial "partials/wac_modal"
+= partial "partials/video_modal"
+= partial "partials/json_modal"
+= partial "partials/edit_modal"

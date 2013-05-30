@@ -1,0 +1,9 @@
+-# cache 'weather', :expires_in => 15.minutes do
+  - weather = begin Weather.lookup(12781884) rescue nil end
+  - if weather
+    %span(class="temperature")
+      = raw "#{weather.condition.temp}&deg;&nbsp;#{weather.units.temperature}"
+    %span(class="conditions conditions_#{weather.condition.code}")
+      = "#{weather.condition.text}"
+    %span(class="attribution")
+      Via <a href="http://weather.yahoo.com/">Yahoo! Weather</a>

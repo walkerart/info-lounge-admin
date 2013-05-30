@@ -1,0 +1,11 @@
+#wac_Modal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1",style: "min-height: 160px;"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h3#myModalLabel Add WAC Item
+  .modal-body{style: "position: absolute;overflow:visible;"}
+    %p One fine body…
+    %label{:for => "product_search"} Product Search:    
+    %input#typeaheadsearch.span3{"data-items" => "4", "data-provide" => "typeahead", :type => "text"}
+  .modal-footer
+    %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+    %button.btn.btn-primary#wac_save Save changes
