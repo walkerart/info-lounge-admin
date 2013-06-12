@@ -1,8 +1,32 @@
 
 $(document).ready(function() {
   //this is the autocomplete stuff
-  var wac_artworks,selected_artwork,current_edit_slide;
+  var wac_artworks,selected_artwork,current_edit_slide,list_vid,list_thumb;
   
+  $.get("http://10.1.6.75/media/",function(data,status){
+      var d = $.parseHTML( data );
+      $(d[5]).find('li').each(function( index ) {
+        if($(this).text() == ' Parent Directory'){
+          
+        }else{
+          $('#vid_pick').append('<option>'+$(this).text()+'</option>');
+        }
+      });
+      $('.selectpicker_vid').selectpicker();
+    });
+    
+    $.get("http://10.1.6.75/thumbnails/",function(data,status){
+        var d = $.parseHTML( data );
+        $(d[5]).find('li').each(function( index ) {
+          if($(this).text() == ' Parent Directory'){
+          
+          }else{
+            $('#thum_pick').append('<option>'+$(this).text()+'</option>');
+          }
+        });
+        $('.selectpicker_thumb').selectpicker();
+      });
+
   // Setup the dnd listeners.
   var dropZone = document.getElementById('drop_zone');
   dropZone.addEventListener('dragover', import_json.handleDragOver, false);
@@ -10,7 +34,12 @@ $(document).ready(function() {
 
   $( "#sortable" ).sortable();
   $( "#sortable" ).disableSelection();
+  
+  
+  
+  
 
+  
   //markdown editor
   var converter1 = Markdown.getSanitizingConverter();
   var editor1 = new Markdown.Editor(converter1);
@@ -22,10 +51,8 @@ $(document).ready(function() {
   editor2.run();
   
   $.getJSON('js/garden.json', function(data) {
-    console.log(data);
     wac_artworks = data.slides;
     wac_artworks = removeEmptyArrayElements(wac_artworks);
-    console.log(wac_artworks);
   });
   
   $('#typeaheadsearch').typeahead({
@@ -88,8 +115,12 @@ $(document).ready(function() {
   //load json from file
     $('body').on('click', '#json_load', function (event) {
       $('#json_Modal').modal('hide');
-      var new_slide_set =$.parseJSON(import_json.imported_json);
-      $.each( new_slide_set.slides, function( key, value ) {
+      var new_slide_set = $.parseJSON(import_json.imported_json);
+      var arr = new_slide_set.slides;
+      //arr.reverse();
+      var last = arr.shift();
+      arr.push(last);
+      $.each( arr, function( key, value ) {
         if(value != null){
           screen_viz.append_slide_list(screen_viz.make_slide(value));      
         }
@@ -111,13 +142,27 @@ $(document).ready(function() {
     $('.new_slide').popover('hide');
     var $el = $(this).parents('#video_Modal');
     var new_slide = new slide();
-    new_slide.slide_type = 'video';
+    
+    if($('#optionsCheckbox').prop('checked')){
+      new_slide.slide_type = 'autoplay';
+      console.log('autoplay');
+    }else{
+      new_slide.slide_type = 'video';
+      console.log('video');
+    }
+    $('#optionsCheckbox').attr('checked', false);
+    
     new_slide.artwork_title = $('.artwork_title').val();
     new_slide.artwork_artist = $('.artwork_artist').val();
     new_slide.artwork_year = $('.artwork_year').val();
-    new_slide.artwork_text = $('.artwork_text').val();
-    new_slide.video_poster = "http://video-js.zencoder.com/oceans-clip.jpg";
-    new_slide.video_src = "http://video-js.zencoder.com/oceans-clip.mp4" ;
+    new_slide.artwork_text = $('#video_Modal .wmd-preview').html();
+    if($('#thum_pick').val()){
+      new_slide.video_poster = 'http://10.1.6.75/thumbnails/'+$('#thum_pick').val() ;
+      new_slide.thumbnail = 'http://10.1.6.75/thumbnails/'+$('#thum_pick').val() ;
+    }
+    if($('#vid_pick').val()){
+      new_slide.video_src = 'http://10.1.6.75/media/'+$('#vid_pick').val() ;
+    }
     screen_viz.append_slide_list(new_slide);
   });
   

@@ -6,6 +6,13 @@
     %input.artwork_artist{:placeholder => "Artist", :type => "text"}/
     %input.artwork_title{:placeholder => "Title", :type => "text"}/
     %input.artwork_year{:placeholder => "Date", :type => "text"}/
+    %select.selectpicker_thumb#thum_pick{style: "position:absolute;"}
+
+    
+    %select.selectpicker_vid#vid_pick{style: "position:absolute;"}
+    %label.checkbox
+      %input#optionsCheckbox{:type => "checkbox", :value => "option1", style: "-webkit-appearance: checkbox;"}/
+      Autoplay
     .wmd-panel
       #wmd-button-bar
       %textarea#wmd-input.wmd-input
@@ -17,8 +24,7 @@
       
           <marquee>I'm the ghost from the past!</marquee>
     #wmd-preview.wmd-panel.wmd-preview.hide
-    %input.artwork_thumb{:placeholder => "Thumb", :type => "text"}/
-    %input.artwork_video{:placeholder => "Video", :type => "text"}/
+    
     
   .modal-footer
     %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Cancel

@@ -13,6 +13,7 @@
     "underscore": "~1.4.4",
     "typeahead.js": "~0.9.2",
     "pagedown-bootstrap": "git://github.com/samwillis/pagedown-bootstrap.git",
-    "reMarked.js": "git://github.com/leeoniya/reMarked.js.git"
+    "reMarked.js": "git://github.com/leeoniya/reMarked.js.git",
+    "bootstrap-select": "latest"
   }
 }

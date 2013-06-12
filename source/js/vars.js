@@ -40,6 +40,8 @@ reMarker = new reMarked({
   br_only: false
 });
 
+
+
 function removeEmptyArrayElements(arr) { 
   if (!Object.prototype.toString.call( arr ) === '[object Array]' ) {
     return arr;
@@ -53,3 +55,4 @@ function removeEmptyArrayElements(arr) {
     return newArray;
   }
 }
+

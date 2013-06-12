@@ -5,6 +5,7 @@
 /*= require jquery.ui/themes/base/jquery.ui.core */
 /*= require jquery.ui/themes/base/jquery.ui.datepicker */
 /*= require variable_width/index */
+/*= require bootstrap-select/bootstrap-select.min */
 
 @import "susy";
 @import "base_scss/base";
@@ -89,4 +90,9 @@ body,html {
   text-align: center;
   font-size: 20pt;
   color: #bbb;
+}
+.checkbox{
+  display: inline-block;
+  margin-left: 9px;
+  margin-bottom: 0;
 }

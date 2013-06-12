@@ -12,6 +12,7 @@
 //= require pagedown-bootstrap/Markdown.Converter
 //= require pagedown-bootstrap/Markdown.Sanitizer
 //= require pagedown-bootstrap/Markdown.Editor
+//= require bootstrap-select/bootstrap-select.min
 
 //= require vars
 //= require download_json
@@ -19,3 +20,4 @@
 //= require import_json
 //= require screen_json
 //= require doc_ready
+

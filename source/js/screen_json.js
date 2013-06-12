@@ -4,7 +4,10 @@ var screen_json = {
     
     make_json: function() {
       var whole_json = { "name":"info"};
-      whole_json.slides = this.slides;
+      var array = [];
+      array = this.slides;
+      array.unshift(array.pop());
+      whole_json.slides = array;
       var json_to_return = JSON.stringify(whole_json);
       return json_to_return;
     },
