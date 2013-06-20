@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-  //this is the autocomplete stuff
+  
   var wac_artworks,selected_artwork,current_edit_slide,list_vid,list_thumb;
   
   $.get("http://10.1.6.75/media/",function(data,status){
@@ -50,6 +50,8 @@ $(document).ready(function() {
   var editor2 = new Markdown.Editor(converter2,"-second");
   editor2.run();
   
+  
+  //this is the autocomplete stuff
   $.getJSON('js/garden.json', function(data) {
     wac_artworks = data.slides;
     wac_artworks = removeEmptyArrayElements(wac_artworks);
