@@ -97,17 +97,11 @@ $(document).ready(function() {
     // do something…
   })
   
-  //save json to server
-    $('body').on('click', '.save_json .export', function (event) {
-      screen_viz.send_to_json();
-      console.log('send to post');
-      console.log(screen_json.make_json());
-    });
-  //end
+  send_json.on_doc_ready();
   
   //download json
     $('body').on('click', '.save_json .download', function (event) {
-      screen_viz.send_to_json()
+      screen_viz.send_to_json();
       download_json.save(screen_json.make_json(), 'screen.json');
     });
   //end
@@ -144,17 +138,15 @@ $(document).ready(function() {
     var new_slide = new slide();
     
     if($('#optionsCheckbox').prop('checked')){
-      new_slide.slide_type = 'autoplay';
-      console.log('autoplay');
+      new_slide.type = 'autoplay';
     }else{
-      new_slide.slide_type = 'video';
-      console.log('video');
+      new_slide.type = 'video';
     }
     $('#optionsCheckbox').attr('checked', false);
     
-    new_slide.artwork_title = $('.artwork_title').val();
-    new_slide.artwork_artist = $('.artwork_artist').val();
-    new_slide.artwork_year = $('.artwork_year').val();
+    new_slide.title = $('.artwork_title').val();
+    new_slide.artist = $('.artwork_artist').val();
+    new_slide.year = $('.artwork_year').val();
     new_slide.artwork_text = $('#video_Modal .wmd-preview').html();
     if($('#thum_pick').val()){
       new_slide.video_poster = 'http://10.1.6.75/thumbnails/'+$('#thum_pick').val() ;
@@ -164,6 +156,10 @@ $(document).ready(function() {
       new_slide.video_src = 'http://10.1.6.75/media/'+$('#vid_pick').val() ;
     }
     screen_viz.append_slide_list(new_slide);
+    
+    $('.artwork_title').val('');
+    $('.artwork_artist').val('');
+    $('.artwork_year').val('');
   });
   
   $('body').on('click', '#wac_save', function (event) {
@@ -181,10 +177,10 @@ $(document).ready(function() {
     var $el = $(this).parents('#img_Modal');
     var new_slide = new slide();
     
-    new_slide.slide_type = 'zoomer';
-    new_slide.artwork_title = "THIS IS MY SLIDE TEST";
-    new_slide.artwork_artist = "Anthony Warnick";
-    new_slide.artwork_year = "2013";
+    new_slide.type = 'zoomer';
+    new_slide.title = "THIS IS MY SLIDE TEST";
+    new_slide.artist = "Anthony Warnick";
+    new_slide.year = "2013";
     new_slide.artwork_text = "<p>Proin quis tortor orci.</p>";
     new_slide.zoomer_url = "http://cdn{s}.walkerart.org/wac_786/{z}_{x}_{y}.jpg";
     new_slide.zoomer_width = 4000;
@@ -195,16 +191,14 @@ $(document).ready(function() {
   //edit_slide
     $('.list_of_slides').on('click', '.slide_item', function (event) {
       current_edit_slide = "#"+$(event.currentTarget).attr('id');
-      console.log(current_edit_slide);
-      var markdown_html = $(current_edit_slide).data().artwork_text;
-      console.log(markdown_html);
+      var markdown_html = $(event.currentTarget).data().artwork_text;
       var markdown = reMarker.render(markdown_html);
-      $('#edit_Modal').modal();
-      $('#edit_Modal .artwork_artist').val($(this).data().artwork_artist);
-      $('#edit_Modal .artwork_title').val($(this).data().artwork_title);
-      $('#edit_Modal .artwork_year').val($(this).data().artwork_year);
+      $('#edit_Modal').modal('show');
+      $('#edit_Modal .artwork_artist').val($(this).data().artist);
+      $('#edit_Modal .artwork_title').val($(this).data().title);
+      $('#edit_Modal .artwork_year').val($(this).data().year);
       $('#edit_Modal #wmd-input-second').val(markdown);
-      $('#edit_Modal #wmd-preview-second').html($(current_edit_slide).data().artwork_text);
+      //$('#edit_Modal #wmd-preview-second').html($(current_edit_slide).data().artwork_text);
       //$('#edit_Modal .artwork_thumb').val($(this).data().artwork_artist);
       //$('#edit_Modal .artwork_video').val($(this).data().artwork_artist);    
     });
@@ -214,13 +208,11 @@ $(document).ready(function() {
       $('#edit_Modal').modal('hide');
       var new_meta = "<span>"+$('#edit_Modal .artwork_title').val()+"</span><span>"+$('#edit_Modal .artwork_artist').val()+"</span>";
       $(current_edit_slide).find('.slide_meta').html(new_meta);
-      $(current_edit_slide).data().artwork_title = $('#edit_Modal .artwork_title').val();
-      $(current_edit_slide).data().artwork_artist = $('#edit_Modal .artwork_artist').val();
-      $(current_edit_slide).data().artwork_year = $('#edit_Modal .artwork_year').val();
-      $(current_edit_slide).data().artwork_text = $('#edit_Modal #wmd-preview-second').html();
-      //$current_edit_slide.data().video_poster = "http://video-js.zencoder.com/oceans-clip.jpg";
-      //$current_edit_slide.data().video_src = "http://video-js.zencoder.com/oceans-clip.mp4";
-      //$current_edit_slide.data().artwork_artist = "test";
+      $(current_edit_slide).data('title', $('#edit_Modal .artwork_title').val());
+      $(current_edit_slide).data('artist', $('#edit_Modal .artwork_artist').val());
+      $(current_edit_slide).data('year', $('#edit_Modal .artwork_year').val());
+      var text_string = $('#edit_Modal #wmd-preview-second').html();
+      $(current_edit_slide).data('artwork_text', String(text_string));
     });
   //end
 

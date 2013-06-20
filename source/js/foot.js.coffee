@@ -19,5 +19,6 @@
 //= require screen_viz
 //= require import_json
 //= require screen_json
+//= require send_json
 //= require doc_ready
 

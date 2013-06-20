@@ -5,9 +5,13 @@ var screen_json = {
     make_json: function() {
       var whole_json = { "name":"info"};
       var array = [];
+      screen_viz.send_to_json();
       array = this.slides;
-      array.unshift(array.pop());
+      if(array.length >= 2){
+        array.unshift(array.pop());
+      }
       whole_json.slides = array;
+      //console.log(whole_json);
       var json_to_return = JSON.stringify(whole_json);
       return json_to_return;
     },
