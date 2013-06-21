@@ -64,6 +64,7 @@ $(document).ready(function() {
             url: 'http://www.walkerart.org/collections/api/search?q=%QUERY',
             dataType: 'json'
         },
+        valueKey: 'accession_number',
         template: '<p><strong>{{artist}}</strong>, {{title}} – {{year}}</p>',
         engine: Hogan
     }
