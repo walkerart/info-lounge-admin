@@ -61,7 +61,7 @@ $(document).ready(function() {
     {
         name: 'collections',
         remote: {
-            url: 'http://walkerart.local/collections/api/search?q=%QUERY',
+            url: 'http://www.walkerart.org/collections/api/search?q=%QUERY',
             dataType: 'json'
         },
         template: '<p><strong>{{artist}}</strong>, {{title}} – {{year}}</p>',
