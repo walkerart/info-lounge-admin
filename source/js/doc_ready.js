@@ -64,7 +64,7 @@ $(document).ready(function() {
             url: 'http://www.walkerart.org/collections/api/search?q=%QUERY',
             dataType: 'json'
         },
-        template: '<p><strong>{{artist}}</strong>, {{title}} – {{year}}</p>',
+        template: ['<p><strong>{{artist}}</strong>, {{title}} – {{year}}</p>'].join(''),
         engine: Hogan
     }
   ]);
@@ -72,10 +72,8 @@ $(document).ready(function() {
   
   
   ////////my break 
-  
-  
-  
-  
+                   
+    
   
   //this is the add new slide stuff
   $('.new_slide').popover({ 

@@ -15,6 +15,7 @@
     "pagedown-bootstrap": "git://github.com/samwillis/pagedown-bootstrap.git",
     "reMarked.js": "git://github.com/leeoniya/reMarked.js.git",
     "bootstrap-select": "latest",
-    "hogan.js": "http://twitter.github.com/hogan.js/builds/2.0.0/hogan-2.0.0.js"
+    "hogan.js": "http://twitter.github.com/hogan.js/builds/2.0.0/hogan-2.0.0.js",
+    "typeahead.js-bootstrap.css": "https://github.com/jharding/typeahead.js-bootstrap.css.git"
   }
 }
