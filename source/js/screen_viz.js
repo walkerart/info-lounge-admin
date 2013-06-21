@@ -37,7 +37,7 @@ var screen_viz = {
         sl.zoomer_width = obj.zoomer_width;
         sl.zoomer_height = obj.zoomer_height;
         sl.video_poster = obj.video_poster;
-        sl.video_src = obj.video_src;  
+        sl.video_src = obj.video_src;
         return sl;
       }
     }

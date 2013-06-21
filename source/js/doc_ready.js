@@ -65,12 +65,19 @@ $(document).ready(function() {
             dataType: 'json'
         },
         valueKey: 'accession_number',
-        template: '<p><img src="{{thumbnail}}" width="150"/><span><strong>{{artist}}</strong>, {{title}} – {{year}}</span></p>',
+        template: '<p><img src="{{thumbnail}}" width="150"/><span>{{artist}}, <em>{{title}}</em> – {{year}}</span></p>',
         engine: Hogan
     }
   ]);
   
-  
+  $('#typeaheadsearch').on('typeahead:selected',function(event,selected_artwork) {
+    $('#wac_Modal').modal('hide');
+    $('.new_slide').popover('hide');
+    $('#typeaheadsearch').val('');
+
+    selected_artwork.type = "zoomer";
+    screen_viz.append_slide_list(screen_viz.make_slide(selected_artwork));
+  });
   
   ////////my break 
                    
@@ -159,15 +166,6 @@ $(document).ready(function() {
     $('.artwork_year').val('');
   });
   
-  $('body').on('click', '#wac_save', function (event) {
-    $('#wac_Modal').modal('hide');
-    $('.new_slide').popover('hide');
-    $('#typeaheadsearch').val('');
-
-    selected_artwork.type = "zoomer";
-    screen_viz.append_slide_list(screen_viz.make_slide(selected_artwork));
-  });
-  
   $('body').on('click', '#img_save', function (event) {
     $('#img_Modal').modal('hide');
     $('.new_slide').popover('hide');
@@ -188,12 +186,12 @@ $(document).ready(function() {
   //edit_slide
     $('.list_of_slides').on('click', '.slide_item', function (event) {
       current_edit_slide = "#"+$(event.currentTarget).attr('id');
-      var markdown_html = $(event.currentTarget).data().artwork_text;
-      var markdown = reMarker.render(markdown_html);
+      var markdown_html = $(event.currentTarget).data().wac.artwork_text;
+      var markdown = markdown_html ? reMarker.render(markdown_html) : '';
       $('#edit_Modal').modal('show');
-      $('#edit_Modal .artwork_artist').val($(this).data().artist);
-      $('#edit_Modal .artwork_title').val($(this).data().title);
-      $('#edit_Modal .artwork_year').val($(this).data().year);
+      $('#edit_Modal .artwork_artist').val($(this).data().wac.artist);
+      $('#edit_Modal .artwork_title').val($(this).data().wac.title);
+      $('#edit_Modal .artwork_year').val($(this).data().wac.year);
       $('#edit_Modal #wmd-input-second').val(markdown);
       //$('#edit_Modal #wmd-preview-second').html($(current_edit_slide).data().artwork_text);
       //$('#edit_Modal .artwork_thumb').val($(this).data().artwork_artist);
@@ -205,11 +203,13 @@ $(document).ready(function() {
       $('#edit_Modal').modal('hide');
       var new_meta = "<span>"+$('#edit_Modal .artwork_title').val()+"</span><span>"+$('#edit_Modal .artwork_artist').val()+"</span>";
       $(current_edit_slide).find('.slide_meta').html(new_meta);
-      $(current_edit_slide).data('title', $('#edit_Modal .artwork_title').val());
-      $(current_edit_slide).data('artist', $('#edit_Modal .artwork_artist').val());
-      $(current_edit_slide).data('year', $('#edit_Modal .artwork_year').val());
+      var wac = $(current_edit_slide).data('wac');
+      wac.title = $('#edit_Modal .artwork_title').val();
+      wac.artist = $('#edit_Modal .artwork_artist').val();
+      wac.year = $('#edit_Modal .artwork_year').val();
       var text_string = $('#edit_Modal #wmd-preview-second').html();
-      $(current_edit_slide).data('artwork_text', String(text_string));
+      wac.artwork_text = String(text_string);
+      $(current_edit_slide).data('wac', wac);
     });
   //end
 
