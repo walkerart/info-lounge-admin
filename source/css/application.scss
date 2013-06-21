@@ -131,3 +131,24 @@ body,html {
   z-index:1;
   background-color: rgb(255, 255, 255);
 }
+
+.tt-dropdown-menu{
+  width:600px;
+}
+
+.tt-suggestion{
+  p{
+    min-height:100px;
+  }
+  img{
+    max-height:100px;
+    max-width:100px;
+    width:auto;
+    height:auto;
+  }
+  span{
+    display:block;
+    float:right;
+    width:425px;
+  }
+}
