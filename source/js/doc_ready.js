@@ -73,10 +73,8 @@ $(document).ready(function() {
   
   
   ////////my break 
-  
-  
-  
-  
+                   
+    
   
   //this is the add new slide stuff
   $('.new_slide').popover({ 
