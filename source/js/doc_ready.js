@@ -65,7 +65,7 @@ $(document).ready(function() {
             dataType: 'json'
         },
         valueKey: 'accession_number',
-        template: '<p><strong>{{artist}}</strong>, {{title}} – {{year}}</p>',
+        template: '<p><img src="{{thumbnail}}" width="150"/><strong>{{artist}}</strong>, {{title}} – {{year}}</p>',
         engine: Hogan
     }
   ]);
