@@ -8,6 +8,8 @@
 //= require hamlcoffee
 //= require_tree ./templates
 //= require bootstrap/docs/assets/js/bootstrap
+//= require hogan.js/index.js
+//= require typeahead.js/dist/typeahead.min.js
 //= require reMarked.js/reMarked
 //= require pagedown-bootstrap/Markdown.Converter
 //= require pagedown-bootstrap/Markdown.Sanitizer
@@ -20,4 +22,3 @@
 //= require import_json
 //= require screen_json
 //= require doc_ready
-

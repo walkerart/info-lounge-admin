@@ -55,21 +55,17 @@ $(document).ready(function() {
     wac_artworks = removeEmptyArrayElements(wac_artworks);
   });
   
-  $('#typeaheadsearch').typeahead({
-    source: function(query, process) {
-      var results = _.map(wac_artworks, function(artwork) {
-         return artwork.title;
-      });
-      process(results);
-    },
-    updater: function(id) {
-      var artwk = _.find(wac_artworks, function(p) {
-          return p.title == id;
-      });
-      selected_artwork = artwk;
-      return artwk.title;
+  $('#typeaheadsearch').typeahead([
+    {
+        name: 'collections',
+        remote: {
+            url: 'http://walkerart.local/collections/api/search?q=%QUERY',
+            dataType: 'json'
+        },
+        template: '<p><strong>{{artist}}</strong>, {{title}} – {{year}}</p>',
+        engine: Hogan
     }
-  });
+  ]);
   
   
   
