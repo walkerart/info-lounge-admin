@@ -13,4 +13,4 @@ gem "therubyracer", "~> 0.11"
 gem "less", "~> 2.3"
 gem 'compass', '>= 0.12.2'
 gem "susy"
-gem 'rb-inotify', '~> 0.9'
+
