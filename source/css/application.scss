@@ -76,6 +76,7 @@ body,html {
 
 .test_main{
   .list_of_slides{
+    padding-top:173px;
     width:100%;
   }
 }
@@ -95,4 +96,37 @@ body,html {
   display: inline-block;
   margin-left: 9px;
   margin-bottom: 0;
+}
+.admin_nav{
+  position:fixed;
+  left:0px;
+  right:0px;
+  top:37px;
+  z-index:1;
+}
+.slide_control{
+  position: fixed;
+  left:15px;
+  right:15px;
+  top:105px;
+  z-index:1;
+}
+
+.alert_holder{
+  position: fixed;
+  left:15px;
+  right:15px;
+  top:105px;
+  z-index:2;
+  
+}
+
+.nav_background{
+  position: fixed;
+  left:15px;
+  right:15px;
+  top:0px;
+  height:173px;
+  z-index:1;
+  background-color: rgb(255, 255, 255);
 }

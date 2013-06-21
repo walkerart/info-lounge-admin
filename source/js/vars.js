@@ -1,12 +1,12 @@
 var reMarker, slide;
 
 slide = function() {
-  this.slide_type = "";
-  this.slide_url = "";
-  this.artwork_title = "";
-  this.artwork_artist = "";
-  this.artwork_year = "";
-  this.artwork_text = "";
+  this.type = "";
+  this.url = "";
+  this.title = "";
+  this.artist = "";
+  this.year = "";
+  this.text = "";
   this.text=new Object();
     this.text.author_string = "";
     this.text.publish_state_string = "";
@@ -19,7 +19,7 @@ slide = function() {
   this.zoomer_height = 0;
   this.video_poster = "";
   this.video_poster = "";
-  return this.video_src = "";
+  this.video_src = "";
 };
 
 reMarker = new reMarked({
@@ -56,3 +56,20 @@ function removeEmptyArrayElements(arr) {
   }
 }
 
+function deepCopy(obj) {
+    if (Object.prototype.toString.call(obj) === '[object Array]') {
+        var out = [], i = 0, len = obj.length;
+        for ( ; i < len; i++ ) {
+            out[i] = arguments.callee(obj[i]);
+        }
+        return out;
+    }
+    if (typeof obj === 'object') {
+        var out = {}, i;
+        for ( i in obj ) {
+            out[i] = arguments.callee(obj[i]);
+        }
+        return out;
+    }
+    return obj;
+}
